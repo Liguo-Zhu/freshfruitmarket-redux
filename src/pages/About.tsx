@@ -2,7 +2,7 @@ import { Box, Typography, Divider } from "@mui/material";
 
 export default function About() {
   return (
-    <Box sx={{ margin: "25px" }}>
+    <Box sx={{ margin: "20px" }}>
       <Typography
         fontSize={25}
         sx={{

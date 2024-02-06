@@ -8,7 +8,6 @@ import {
   BadgeProps,
   Badge,
   IconButton,
-  Container,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -35,124 +34,123 @@ export default function Navbar() {
 
   return (
     <AppBar position="sticky">
-      <Container>
-        <Toolbar
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingLeft: "4px",
+            "@media (max-width: 500px)": { display: "none" },
           }}
         >
-          <Box
+          <img src="/images/logo.png" width={"20px"}></img>
+          <Typography
+            variant="inherit"
+            style={{ textTransform: "uppercase", paddingLeft: "5px" }}
+          >
+            Fresh Fruit Market
+          </Typography>
+        </Box>
+
+        <Box>
+          {/* navigate to home page */}
+          <Button
+            component={NavLink}
+            to="/"
+            color="inherit"
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              paddingLeft: "4px",
+              color: "inherit",
+              position: "relative",
+              "&.active": {
+                fontWeight: "bold",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  bottom: 0,
+                  width: "100%",
+                  height: "2px",
+                  backgroundColor: "currentColor",
+                },
+              },
             }}
           >
-            <img src="/images/logo.png" width={"20px"}></img>
-            <Typography
-              variant="inherit"
-              style={{ textTransform: "uppercase", paddingLeft: "5px" }}
-            >
-              Fresh Fruit Market
-            </Typography>
-          </Box>
+            Home
+          </Button>
 
-          <Box>
-            {/* navigate to home page */}
-            <Button
-              component={NavLink}
-              to="/"
-              color="inherit"
-              sx={{
-                color: "inherit",
-                position: "relative",
-                "&.active": {
-                  fontWeight: "bold",
-                  "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    left: 0,
-                    bottom: 0,
-                    width: "100%",
-                    height: "2px",
-                    backgroundColor: "currentColor",
-                  },
+          {/* navigate to store page */}
+          <Button
+            component={NavLink}
+            to="/store"
+            color="inherit"
+            sx={{
+              color: "inherit",
+              position: "relative",
+              "&.active": {
+                fontWeight: "bold",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  bottom: 0,
+                  width: "100%",
+                  height: "2px",
+                  backgroundColor: "currentColor",
                 },
-              }}
-            >
-              Home
-            </Button>
+              },
+            }}
+          >
+            Store
+          </Button>
 
-            {/* navigate to store page */}
-            <Button
-              component={NavLink}
-              to="/store"
-              color="inherit"
-              sx={{
-                color: "inherit",
-                position: "relative",
-                "&.active": {
-                  fontWeight: "bold",
-                  "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    left: 0,
-                    bottom: 0,
-                    width: "100%",
-                    height: "2px",
-                    backgroundColor: "currentColor",
-                  },
+          {/* navigate to about page */}
+          <Button
+            component={NavLink}
+            to="/about"
+            color="inherit"
+            sx={{
+              color: "inherit",
+              position: "relative",
+              "&.active": {
+                fontWeight: "bold",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  bottom: 0,
+                  width: "100%",
+                  height: "2px",
+                  backgroundColor: "currentColor",
                 },
-              }}
-            >
-              Store
-            </Button>
+              },
+            }}
+          >
+            About
+          </Button>
+        </Box>
 
-            {/* navigate to about page */}
-            <Button
-              component={NavLink}
-              to="/about"
-              color="inherit"
-              sx={{
-                color: "inherit",
-                position: "relative",
-                "&.active": {
-                  fontWeight: "bold",
-                  "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    left: 0,
-                    bottom: 0,
-                    width: "100%",
-                    height: "2px",
-                    backgroundColor: "currentColor",
-                  },
-                },
-              }}
-            >
-              About
-            </Button>
-          </Box>
-
-          {/* cart  */}
-          <Box color="inherit">
-            {"Cart"}
-            <IconButton
-              aria-label="cart"
-              color="inherit"
-              onClick={() => {
-                dispatch(openCart());
-              }}
-            >
-              <StyledBadge badgeContent={cartQuantity} color="secondary">
-                <ShoppingCartIcon />
-              </StyledBadge>
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </Container>
+        {/* cart  */}
+        <Box color="inherit">
+          {"Cart"}
+          <IconButton
+            aria-label="cart"
+            color="inherit"
+            onClick={() => {
+              dispatch(openCart());
+            }}
+          >
+            <StyledBadge badgeContent={cartQuantity} color="secondary">
+              <ShoppingCartIcon />
+            </StyledBadge>
+          </IconButton>
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 }

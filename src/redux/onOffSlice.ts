@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState: boolean = false;
+
 export const onOffSlice = createSlice({
   name: "cartIsOpen",
-  initialState: false,
+  initialState: initialState,
   reducers: {
     openCart: (state) => {
       return !state;
