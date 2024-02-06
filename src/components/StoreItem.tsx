@@ -35,7 +35,11 @@ export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
 
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <Card sx={{ marginBottom: 5 }}>
+      <Card
+        sx={{
+          margin: "15px",
+        }}
+      >
         {/* image url */}
         <CardMedia
           component="img"
