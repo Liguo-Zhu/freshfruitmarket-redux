@@ -27,7 +27,6 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 //  navigation bar
 export default function Navbar() {
   const cartItems = useAppSelector((state) => state.cart);
-  const onOffStatus = useAppSelector((state) => state.onOffStatus);
   const dispatch = useAppDispatch();
   const cartQuantity = cartItems.reduce(
     (quantity, item) => quantity + item.quantity,
