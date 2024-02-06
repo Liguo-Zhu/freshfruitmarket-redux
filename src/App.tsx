@@ -29,6 +29,7 @@ export default function App() {
             alignItems: "center",
             justifyContent: "center",
             color: "GrayText",
+            "@media (max-width: 500px)": { fontSize: "0.9rem" },
           }}
         >
           <p>&copy; 2024 Fresh Fruit Market. All rights reserved.</p>
