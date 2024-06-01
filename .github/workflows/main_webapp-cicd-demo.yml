@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'webapp-cicd-demo'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_394D619C43BD48E991A57D8BEF25FDDA }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
