@@ -32,7 +32,7 @@ export default function App() {
             "@media (max-width: 500px)": { fontSize: "0.9rem" },
           }}
         >
-          <p>&copy; 2024 Fresh Fruit Market. All rights reserved.</p>
+          <p>&copy; 2024 Fresh Fruit Market.</p>
         </Box>
       </Provider>
     </BrowserRouter>
