@@ -13,7 +13,7 @@ export default function Home() {
             "@media (max-width: 500px)": { fontSize: "1.3rem" },
           }}
         >
-          Welcome to Fresh Fruit Market
+          Fresh Fruit Market
         </Typography>
         <Typography
           fontSize={20}
